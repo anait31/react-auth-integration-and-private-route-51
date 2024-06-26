@@ -1,6 +1,19 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProviders";
 
 const Header = () => {
+
+    const { user, logOutUser } = useContext(AuthContext);
+    // console.log(user.email)
+
+    const handleLogOut = () => {
+        logOutUser()
+        .then(() => console.log('User Logout Successfully'))
+        .catch(error => {
+            console.log(error.message)
+        })
+    }
 
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>
@@ -40,7 +53,12 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Profile</a>
+                {
+                    user ? <>
+                        <p className="mr-2">{user.email}</p>
+                        <button onClick={handleLogOut}>LogOut</button>
+                    </> : <Link to="/login">Login</Link>
+                }
             </div>
         </div>
     );
