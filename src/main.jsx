@@ -1,12 +1,12 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
+import * as React from "react";
 import './index.css'
-import AuthProviders from './providers/AuthProviders.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Root from './components/Root/Root.jsx'
 import Home from './components/Home/Home.jsx'
 import Login from './components/Login/Login.jsx'
 import Register from './components/Register/Register.jsx'
+import AuthProviders from './providers/AuthProviders.jsx'
 
 const router = createBrowserRouter([
   {

@@ -8,8 +8,8 @@ const Home = () => {
     // console.log(authInfo);
 
     return (
-        <div>
-            <h2>This is Home </h2>
+        <div className="">
+            <h2 className="text-center min-h-screen text-3xl font-bold border-2">This is Home </h2>
         </div>
     );
 };
