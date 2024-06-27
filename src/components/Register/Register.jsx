@@ -1,14 +1,9 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 907702b58353b68e6d6c7279a6ef0a4cc1140e50
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 
 const Register = () => {
 
-<<<<<<< HEAD
     const {createUser} = useContext(AuthContext);
 
     const handleRegisterForm = e => {
@@ -18,18 +13,6 @@ const Register = () => {
         const password = e.target.password.value;
         console.log(name, email, password)
 
-=======
-    const {createUser} = useContext(AuthContext)
-    
-    // console.log(createUser)
-
-    const handleRegisterForm = e => {
-        e.preventDefault();
-        // const name= e.target.name.value;
-        const email = e.target.email.value;
-        const password = e.target.password.value;
-        // console.log(email, password)
->>>>>>> 907702b58353b68e6d6c7279a6ef0a4cc1140e50
         createUser(email, password)
         .then(result => {
             console.log(result.user)

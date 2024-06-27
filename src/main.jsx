@@ -7,6 +7,11 @@ import Home from './components/Home/Home.jsx'
 import Login from './components/Login/Login.jsx'
 import Register from './components/Register/Register.jsx'
 import AuthProviders from './providers/AuthProviders.jsx'
+import Orders from './components/Orders/Orders.jsx';
+import PrivateRoutes from './routes/PrivateRoutes.jsx';
+import Services from './components/Services/Services.jsx';
+import Profile from './components/Profile/Profile.jsx';
+import Dashboard from './components/Dashboard/Dashboard.jsx';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +29,22 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/orders',
+        element: <PrivateRoutes><Orders></Orders></PrivateRoutes>
+      },
+      {
+        path: '/services',
+        element: <PrivateRoutes><Services></Services></PrivateRoutes>
+      },
+      {
+        path: '/profile',
+        element: <PrivateRoutes><Profile></Profile></PrivateRoutes>
+      },
+      {
+        path: '/dashboard',
+        element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>
       }
     ]
   },
